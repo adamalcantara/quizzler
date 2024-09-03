@@ -51,8 +51,13 @@ class _QuizPageState extends State<QuizPage> {
           child: Padding(
             padding: EdgeInsets.all(15.0),
             child: ElevatedButton(
-              // textColor: Colors.white,
-              // color: Colors.green,
+              style: ElevatedButton.styleFrom(
+                foregroundColor: Colors.white,
+                backgroundColor: Colors.green,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(0.0),
+                )
+              ),
               child: Text(
                 'True',
                 style: TextStyle(
@@ -70,7 +75,13 @@ class _QuizPageState extends State<QuizPage> {
           child: Padding(
             padding: EdgeInsets.all(15.0),
             child: ElevatedButton(
-              // color: Colors.red,
+              style: ElevatedButton.styleFrom(
+                  foregroundColor: Colors.white,
+                  backgroundColor: Colors.red,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(0.0),
+                  )
+              ),
               child: Text(
                 'False',
                 style: TextStyle(
