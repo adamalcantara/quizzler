@@ -31,6 +31,7 @@ class _QuizPageState extends State<QuizPage> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
+        // Widget for the question
         Expanded(
           flex: 5,
           child: Padding(
@@ -47,6 +48,7 @@ class _QuizPageState extends State<QuizPage> {
             ),
           ),
         ),
+        // True button
         Expanded(
           child: Padding(
             padding: EdgeInsets.all(15.0),
@@ -71,6 +73,7 @@ class _QuizPageState extends State<QuizPage> {
             ),
           ),
         ),
+        // False button
         Expanded(
           child: Padding(
             padding: EdgeInsets.all(15.0),
@@ -95,7 +98,20 @@ class _QuizPageState extends State<QuizPage> {
             ),
           ),
         ),
-        //TODO: Add a Row here as your score keeper
+
+        // Score Keeper
+        Row(
+          children: <Widget>[
+            Icon(
+              Icons.check,
+              color: Colors.green,
+            ),
+            Icon(
+              Icons.close,
+              color: Colors.red,
+            ),
+          ],
+        )
       ],
     );
   }
