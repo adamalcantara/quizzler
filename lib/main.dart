@@ -29,6 +29,12 @@ class _QuizPageState extends State<QuizPage> {
   // Creating a list (array)
   List<Icon> scoreKeeper = [];
 
+  List<String> questions = [
+    'You can lead a cow down stairs but not up stairs.',
+    'Approximately one quarter of human bones are in the feet.',
+    'A slug\'s blood is green.'
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Column(
