@@ -35,6 +35,13 @@ class _QuizPageState extends State<QuizPage> {
     'A slug\'s blood is green.'
   ];
 
+  // the list for the answers to the questions, corresponding with the question number
+  List<bool> answers = [
+    false,
+    true,
+    true
+  ];
+
   int questionNumber = 0;
 
   @override
@@ -82,9 +89,21 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 //The user picked true
+
+                // set the correctAnswer to the answer in the list
+                bool correctAnswer = answers[questionNumber];
+
+                // Check if user choice is the same as the answer
+                if (correctAnswer == true) {
+                  print('user got question right');
+                } else {
+                  print('user got the question wrong');
+                }
+
                 setState(() {
                   // iterate the question number
                   questionNumber++;
+                  print(questionNumber);
                 });
               },
             ),
@@ -114,6 +133,7 @@ class _QuizPageState extends State<QuizPage> {
                 setState(() {
                   // iterate the question number
                   questionNumber++;
+                  print(questionNumber);
                 });
               },
             ),
