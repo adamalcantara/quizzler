@@ -130,6 +130,17 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 //The user picked false.
+
+                // set the correctAnswer to the answer in the list
+                bool correctAnswer = answers[questionNumber];
+
+                // Check if user choice is the same as the answer
+                if (correctAnswer == false) {
+                  print('user got question right');
+                } else {
+                  print('user got the question wrong');
+                }
+
                 setState(() {
                   // iterate the question number
                   questionNumber++;
