@@ -34,7 +34,7 @@ class _QuizPageState extends State<QuizPage> {
     Question(q: 'You can lead a cow down stairs but not up stairs.', a: false),
     Question(q: 'Approximately one quarter of human bones are in the feet.', a: true),
     Question(q: 'A slug\'s blood is green.', a: true),
-  ]
+  ];
 
   int questionNumber = 0;
 
@@ -52,7 +52,7 @@ class _QuizPageState extends State<QuizPage> {
             child: Center(
               child: Text(
                 // pull from the questions list and use the question number to choose an item in the list
-                questions[questionNumber],
+                questionBank[questionNumber].questionText,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
@@ -85,7 +85,7 @@ class _QuizPageState extends State<QuizPage> {
                 //The user picked true
 
                 // set the correctAnswer to the answer in the list
-                bool correctAnswer = answers[questionNumber];
+                bool correctAnswer = questionBank[questionNumber].questionAnswer;
 
                 // Check if user choice is the same as the answer
                 if (correctAnswer == true) {
@@ -126,7 +126,7 @@ class _QuizPageState extends State<QuizPage> {
                 //The user picked false.
 
                 // set the correctAnswer to the answer in the list
-                bool correctAnswer = answers[questionNumber];
+                bool correctAnswer = questionBank[questionNumber].questionAnswer;
 
                 // Check if user choice is the same as the answer
                 if (correctAnswer == false) {
