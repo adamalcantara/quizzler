@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'question.dart';
+import 'quiz_brain.dart';
+
+// creating a new object that references the QuizBrain from its file
+QuizBrain quizBrain = QuizBrain();
 
 void main() => runApp(Quizzler());
 
@@ -48,7 +51,7 @@ class _QuizPageState extends State<QuizPage> {
             child: Center(
               child: Text(
                 // pull from the questions list and use the question number to choose an item in the list
-                questionBank[questionNumber].questionText,
+                quizBrain.questionBank[questionNumber].questionText,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
@@ -81,7 +84,7 @@ class _QuizPageState extends State<QuizPage> {
                 //The user picked true
 
                 // set the correctAnswer to the answer in the list
-                bool correctAnswer = questionBank[questionNumber].questionAnswer;
+                bool correctAnswer = quizBrain.questionBank[questionNumber].questionAnswer;
 
                 // Check if user choice is the same as the answer
                 if (correctAnswer == true) {
@@ -122,7 +125,7 @@ class _QuizPageState extends State<QuizPage> {
                 //The user picked false.
 
                 // set the correctAnswer to the answer in the list
-                bool correctAnswer = questionBank[questionNumber].questionAnswer;
+                bool correctAnswer = quizBrain.questionBank[questionNumber].questionAnswer;
 
                 // Check if user choice is the same as the answer
                 if (correctAnswer == false) {
