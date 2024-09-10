@@ -50,8 +50,8 @@ class _QuizPageState extends State<QuizPage> {
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                // pull from the questions list and use the question number to choose an item in the list
-                quizBrain.questionBank[questionNumber].questionText,
+                // go into quiz brain and call getQuestionText function for the questionNumber
+                quizBrain.getQuestionText(questionNumber),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
@@ -83,8 +83,8 @@ class _QuizPageState extends State<QuizPage> {
               onPressed: () {
                 //The user picked true
 
-                // set the correctAnswer to the answer in the list
-                bool correctAnswer = quizBrain.questionBank[questionNumber].questionAnswer;
+                // set the correctAnswer to the answer for the question
+                bool correctAnswer = quizBrain.getQuestionAnswer(questionNumber);
 
                 // Check if user choice is the same as the answer
                 if (correctAnswer == true) {
@@ -124,8 +124,8 @@ class _QuizPageState extends State<QuizPage> {
               onPressed: () {
                 //The user picked false.
 
-                // set the correctAnswer to the answer in the list
-                bool correctAnswer = quizBrain.questionBank[questionNumber].questionAnswer;
+                // set the correctAnswer to the answer for the question
+                bool correctAnswer = quizBrain.getQuestionAnswer(questionNumber);
 
                 // Check if user choice is the same as the answer
                 if (correctAnswer == false) {
