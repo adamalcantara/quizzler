@@ -33,10 +33,6 @@ class _QuizPageState extends State<QuizPage> {
   // Creating a list (array)
   List<Icon> scoreKeeper = [];
 
-
-
-  int questionNumber = 0;
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -51,7 +47,7 @@ class _QuizPageState extends State<QuizPage> {
             child: Center(
               child: Text(
                 // go into quiz brain and call getQuestionText function for the questionNumber
-                quizBrain.getQuestionText(questionNumber),
+                quizBrain.getQuestionText(),
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
@@ -84,7 +80,7 @@ class _QuizPageState extends State<QuizPage> {
                 //The user picked true
 
                 // set the correctAnswer to the answer for the question
-                bool correctAnswer = quizBrain.getQuestionAnswer(questionNumber);
+                bool correctAnswer = quizBrain.getQuestionAnswer();
 
                 // Check if user choice is the same as the answer
                 if (correctAnswer == true) {
@@ -95,8 +91,7 @@ class _QuizPageState extends State<QuizPage> {
 
                 setState(() {
                   // iterate the question number
-                  questionNumber++;
-                  print(questionNumber);
+                  quizBrain.nextQuestion();
                 });
               },
             ),
@@ -125,7 +120,7 @@ class _QuizPageState extends State<QuizPage> {
                 //The user picked false.
 
                 // set the correctAnswer to the answer for the question
-                bool correctAnswer = quizBrain.getQuestionAnswer(questionNumber);
+                bool correctAnswer = quizBrain.getQuestionAnswer();
 
                 // Check if user choice is the same as the answer
                 if (correctAnswer == false) {
@@ -136,8 +131,7 @@ class _QuizPageState extends State<QuizPage> {
 
                 setState(() {
                   // iterate the question number
-                  questionNumber++;
-                  print(questionNumber);
+                  quizBrain.nextQuestion();
                 });
               },
             ),
