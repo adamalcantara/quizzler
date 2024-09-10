@@ -36,8 +36,11 @@ class QuizBrain {
 
   void nextQuestion() {
     // check if the current question is less than the number of questions, if it is not, increment it
-    if (_questionNumber < _questionBank.length);
-    _questionNumber++;
+    if (_questionNumber < _questionBank.length - 1) {
+      _questionNumber++;
+    }
+    print(_questionNumber);
+    print(_questionBank.length);
   }
 
   String getQuestionText() {
