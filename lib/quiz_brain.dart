@@ -46,10 +46,12 @@ class QuizBrain {
     print(_questionBank.length);
   }
 
+  // Get the text for the question by going into the question bank for the question # and getting the text
   String getQuestionText() {
     return _questionBank[_questionNumber].questionText;
   }
 
+  // retrieve the answer for the current question number
   bool getQuestionAnswer() {
     return _questionBank[_questionNumber].questionAnswer;
   }
