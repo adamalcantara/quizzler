@@ -30,7 +30,7 @@ class QuizPage extends StatefulWidget {
 
 class _QuizPageState extends State<QuizPage> {
 
-  // Creating a list (array)
+  // Creating a list (array) for keeping the score of the quiz
   List<Icon> scoreKeeper = [];
 
   @override

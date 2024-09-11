@@ -5,6 +5,7 @@ class QuizBrain {
   // The number of the current question, which is private ( _ )
   int _questionNumber = 0;
 
+  // The list for the questions
   List<Question> _questionBank = [
     Question('Some cats are actually allergic to humans', true),
     Question('You can lead a cow down stairs but not up stairs.', false),
@@ -35,8 +36,10 @@ class QuizBrain {
   ];
 
   void nextQuestion() {
-    // check if the current question is less than the number of questions, if it is not, increment it
+    // check if the current question is less than the number of questions, minus one
     if (_questionNumber < _questionBank.length - 1) {
+
+      // if the above is true, increment the question
       _questionNumber++;
     }
     print(_questionNumber);
