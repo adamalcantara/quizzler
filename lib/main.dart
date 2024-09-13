@@ -38,7 +38,7 @@ class _QuizPageState extends State<QuizPage> {
     bool correctAnswer = quizBrain.getQuestionAnswer();
 
     // Check if user choice is the same as the answer
-    if (correctAnswer == correctAnswer) {
+    if (userPickedAnswer == correctAnswer) {
       print('user got question right');
     } else {
       print('user got the question wrong');
