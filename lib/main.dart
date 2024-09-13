@@ -29,7 +29,6 @@ class QuizPage extends StatefulWidget {
 }
 
 class _QuizPageState extends State<QuizPage> {
-
   // Creating a list (array) for keeping the score of the quiz
   List<Icon> scoreKeeper = [];
 
@@ -39,9 +38,15 @@ class _QuizPageState extends State<QuizPage> {
 
     // Check if user choice is the same as the answer
     if (userPickedAnswer == correctAnswer) {
-      print('user got question right');
+      scoreKeeper.add(Icon(
+        Icons.check,
+        color: Colors.green,
+      ));
     } else {
-      print('user got the question wrong');
+      scoreKeeper.add(Icon(
+        Icons.close,
+        color: Colors.red,
+      ));
     }
 
     setState(() {
@@ -49,7 +54,6 @@ class _QuizPageState extends State<QuizPage> {
       quizBrain.nextQuestion();
     });
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -81,12 +85,11 @@ class _QuizPageState extends State<QuizPage> {
             padding: EdgeInsets.all(15.0),
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                foregroundColor: Colors.white,
-                backgroundColor: Colors.green,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(0.0),
-                )
-              ),
+                  foregroundColor: Colors.white,
+                  backgroundColor: Colors.green,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(0.0),
+                  )),
               child: Text(
                 'True',
                 style: TextStyle(
@@ -97,7 +100,6 @@ class _QuizPageState extends State<QuizPage> {
               onPressed: () {
                 //The user picked true
                 checkAnswer(true);
-
               },
             ),
           ),
@@ -112,8 +114,7 @@ class _QuizPageState extends State<QuizPage> {
                   backgroundColor: Colors.red,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(0.0),
-                  )
-              ),
+                  )),
               child: Text(
                 'False',
                 style: TextStyle(
