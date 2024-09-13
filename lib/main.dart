@@ -38,7 +38,7 @@ class _QuizPageState extends State<QuizPage> {
     bool correctAnswer = quizBrain.getQuestionAnswer();
 
     // Check if user choice is the same as the answer
-    if (correctAnswer == true) {
+    if (correctAnswer == correctAnswer) {
       print('user got question right');
     } else {
       print('user got the question wrong');
@@ -96,7 +96,7 @@ class _QuizPageState extends State<QuizPage> {
               ),
               onPressed: () {
                 //The user picked true
-
+                checkAnswer(true);
 
               },
             ),
@@ -124,20 +124,7 @@ class _QuizPageState extends State<QuizPage> {
               onPressed: () {
                 //The user picked false.
 
-                // set the correctAnswer to the answer for the question
-                bool correctAnswer = quizBrain.getQuestionAnswer();
-
-                // Check if user choice is the same as the answer
-                if (correctAnswer == false) {
-                  print('user got question right');
-                } else {
-                  print('user got the question wrong');
-                }
-
-                setState(() {
-                  // iterate the question number
-                  quizBrain.nextQuestion();
-                });
+                checkAnswer(false);
               },
             ),
           ),
