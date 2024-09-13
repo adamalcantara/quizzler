@@ -33,6 +33,24 @@ class _QuizPageState extends State<QuizPage> {
   // Creating a list (array) for keeping the score of the quiz
   List<Icon> scoreKeeper = [];
 
+  void checkAnswer(bool userPickedAnswer) {
+    // set the correctAnswer to the answer for the question
+    bool correctAnswer = quizBrain.getQuestionAnswer();
+
+    // Check if user choice is the same as the answer
+    if (correctAnswer == true) {
+      print('user got question right');
+    } else {
+      print('user got the question wrong');
+    }
+
+    setState(() {
+      // iterate the question number
+      quizBrain.nextQuestion();
+    });
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -79,20 +97,7 @@ class _QuizPageState extends State<QuizPage> {
               onPressed: () {
                 //The user picked true
 
-                // set the correctAnswer to the answer for the question
-                bool correctAnswer = quizBrain.getQuestionAnswer();
 
-                // Check if user choice is the same as the answer
-                if (correctAnswer == true) {
-                  print('user got question right');
-                } else {
-                  print('user got the question wrong');
-                }
-
-                setState(() {
-                  // iterate the question number
-                  quizBrain.nextQuestion();
-                });
               },
             ),
           ),
