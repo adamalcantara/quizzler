@@ -36,6 +36,8 @@ class _QuizPageState extends State<QuizPage> {
     // set the correctAnswer to the answer for the question
     bool correctAnswer = quizBrain.getQuestionAnswer();
 
+    setState(() {
+      
     // Check if user choice is the same as the answer
     if (userPickedAnswer == correctAnswer) {
       scoreKeeper.add(Icon(
@@ -49,7 +51,7 @@ class _QuizPageState extends State<QuizPage> {
       ));
     }
 
-    setState(() {
+
       // iterate the question number
       quizBrain.nextQuestion();
     });
