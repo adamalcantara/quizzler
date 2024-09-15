@@ -38,6 +38,8 @@ class _QuizPageState extends State<QuizPage> {
     bool correctAnswer = quizBrain.getQuestionAnswer();
 
     setState(() {
+    //   Add the steps here
+
 
     // Check if user choice is the same as the answer
     if (userPickedAnswer == correctAnswer) {
