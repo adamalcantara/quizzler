@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'quiz_brain.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 // creating a new object that references the QuizBrain from its file
 QuizBrain quizBrain = QuizBrain();
@@ -37,7 +38,7 @@ class _QuizPageState extends State<QuizPage> {
     bool correctAnswer = quizBrain.getQuestionAnswer();
 
     setState(() {
-      
+
     // Check if user choice is the same as the answer
     if (userPickedAnswer == correctAnswer) {
       scoreKeeper.add(Icon(

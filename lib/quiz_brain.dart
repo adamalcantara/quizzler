@@ -42,7 +42,7 @@ class QuizBrain {
       // if the above is true, increment the question
       _questionNumber++;
     }
-    print(_questionNumber);
+    print("The question number: $_questionNumber");
     print(_questionBank.length);
   }
 
