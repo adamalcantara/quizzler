@@ -41,12 +41,18 @@ class QuizBrain {
 
       // if the above is true, increment the question
       _questionNumber++;
-      print("The question number: $_questionNumber");
-      print(_questionBank.length - 1);
-    } else {
-      print("This is the end of the quiz");
     }
+    print("The question number: $_questionNumber");
+    print(_questionBank.length - 1);
+  }
 
+  bool isFinished() {
+    if(_questionNumber >= _questionBank.length - 1) {
+
+      return true;
+    } else {
+      return false;
+    }
   }
 
   // Get the text for the question by going into the question bank for the question # and getting the text

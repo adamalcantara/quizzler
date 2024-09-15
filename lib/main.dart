@@ -38,25 +38,26 @@ class _QuizPageState extends State<QuizPage> {
     bool correctAnswer = quizBrain.getQuestionAnswer();
 
     setState(() {
-    //   Add the steps here
+      //   Add the steps here
+      if (quizBrain.isFinished() == true) {
+        print("this is the end of the quiz");
+      } else {
+        // Check if user choice is the same as the answer
+        if (userPickedAnswer == correctAnswer) {
+          scoreKeeper.add(Icon(
+            Icons.check,
+            color: Colors.green,
+          ));
+        } else {
+          scoreKeeper.add(Icon(
+            Icons.close,
+            color: Colors.red,
+          ));
+        }
 
-
-    // Check if user choice is the same as the answer
-    if (userPickedAnswer == correctAnswer) {
-      scoreKeeper.add(Icon(
-        Icons.check,
-        color: Colors.green,
-      ));
-    } else {
-      scoreKeeper.add(Icon(
-        Icons.close,
-        color: Colors.red,
-      ));
-    }
-
-
-      // iterate the question number
-      quizBrain.nextQuestion();
+        // iterate the question number
+        quizBrain.nextQuestion();
+      }
     });
   }
 
