@@ -41,6 +41,14 @@ class _QuizPageState extends State<QuizPage> {
       //   Add the steps here
       if (quizBrain.isFinished() == true) {
         print("this is the end of the quiz");
+        Alert(
+          context: context,
+          type: AlertType.error,
+          title: "End of Quiz",
+          desc: "Thank you for completing the quiz",
+        ).show();
+        scoreKeeper.clear();
+        quizBrain.reset();
       } else {
         // Check if user choice is the same as the answer
         if (userPickedAnswer == correctAnswer) {

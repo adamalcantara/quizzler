@@ -55,6 +55,10 @@ class QuizBrain {
     }
   }
 
+  void reset() {
+    _questionNumber = 0;
+  }
+
   // Get the text for the question by going into the question bank for the question # and getting the text
   String getQuestionText() {
     return _questionBank[_questionNumber].questionText;
